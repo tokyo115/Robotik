@@ -1,0 +1,20 @@
+int ldr = A0;
+int led = 13;
+
+void setup() {
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int isik = analogRead(ldr);
+  Serial.println(isik);
+
+  if (isik < 400) {
+    digitalWrite(led, HIGH); // LED YANAR
+  } else {
+    digitalWrite(led, LOW);
+  }
+
+  delay(500);
+}
